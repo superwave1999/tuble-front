@@ -1,41 +1,33 @@
 <template>
   <v-row justify="center" align="center">
     <v-col class="v-col-width">
-      <v-app-bar
-        rounded
-        dense
-      >
+      <v-app-bar rounded dense>
         <v-toolbar-title>{{ $t('title') }}</v-toolbar-title>
         <v-spacer></v-spacer>
         <div class="pr-3 pr-sm-6 pr-md-8">
           <v-icon>mdi-timer</v-icon>
           <span class="text-subtitle-1">
-            {{(isMapLoaded) ? ((time) ? time : '00:00') : '--:--'}}
+            {{ isMapLoaded ? (time ? time : '00:00') : '--:--' }}
           </span>
         </div>
         <div class="pr-3 pr-sm-6 pr-md-8">
           <v-icon>mdi-gesture-tap</v-icon>
           <span class="text-subtitle-1">
-            {{(isMapLoaded) ? moves : '--'}}
+            {{ isMapLoaded ? moves : '--' }}
           </span>
         </div>
-        <NavigationMenu @openHelpDialog="openHelpDialog" @openHistoryDialog="openHistoryDialog" />
+        <NavigationMenu
+          @openHelpDialog="openHelpDialog"
+          @openHistoryDialog="openHistoryDialog"
+        />
       </v-app-bar>
     </v-col>
-      <v-dialog
-        v-model="dialogHelp"
-        scrollable
-        max-width="66ch"
-      >
-        <HelpCard @close="closeHelpDialog"/>
-      </v-dialog>
-      <v-dialog
-        v-model="dialogHistory"
-        scrollable
-        max-width="66ch"
-      >
-        <HistoryCard @close="closeHistoryDialog"/>
-      </v-dialog>
+    <v-dialog v-model="dialogHelp" scrollable max-width="66ch">
+      <HelpCard @close="closeHelpDialog" />
+    </v-dialog>
+    <v-dialog v-model="dialogHistory" scrollable max-width="66ch">
+      <HistoryCard @close="closeHistoryDialog" />
+    </v-dialog>
   </v-row>
 </template>
 
@@ -58,7 +50,7 @@ export default {
           return this.$store.state.game.moves;
         },
         isMapLoaded() {
-          return this.$store.state.game.map && this.$store.state.game.map.length; 
+          return this.$store.state.game.map && this.$store.state.game.map.length;
         },
         timerIsStarted() {
           return this.$store.state.game.timerIsStarted;
@@ -71,7 +63,7 @@ export default {
           } else if (isStarted) {
             this.interval = setInterval(function () {
               this.calcTime();
-            }.bind(this), 1000);  
+            }.bind(this), 1000);
           } else {
             clearInterval(this.interval)
           }
@@ -99,7 +91,7 @@ export default {
           localStorage.setItem("_tuble_helped", true)
         },
         openHelpDialog() {
-          this.dialogTimerStartedBeforeOpen = this.$store.state.game.timerIsStarted; 
+          this.dialogTimerStartedBeforeOpen = this.$store.state.game.timerIsStarted;
           this.$store.commit('game/stopTimer');
           this.dialogHelp = true;
         },
@@ -110,7 +102,7 @@ export default {
           this.dialogHistory = false;
         },
         openHistoryDialog() {
-          this.dialogTimerStartedBeforeOpen = this.$store.state.game.timerIsStarted; 
+          this.dialogTimerStartedBeforeOpen = this.$store.state.game.timerIsStarted;
           this.$store.commit('game/stopTimer');
           this.dialogHistory = true;
         }

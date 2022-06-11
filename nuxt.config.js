@@ -1,6 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 
-require('dotenv').config();
+require('dotenv').config()
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -14,28 +14,22 @@ export default {
     titleTemplate: '%s - Tuble',
     title: 'Tuble',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/global.css'
-  ],
+  css: ['~/assets/global.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/vue-confetti.js', mode: 'client' },
-  ],
+  plugins: [{ src: '~/plugins/vue-confetti.js', mode: 'client' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -64,14 +58,14 @@ export default {
 
   publicRuntimeConfig: {
     axios: {
-      browserBaseURL: process.env.BROWSER_BASE_URL
-    }
+      browserBaseURL: process.env.BROWSER_BASE_URL,
+    },
   },
 
   privateRuntimeConfig: {
     axios: {
-      baseURL: process.env.BASE_URL
-    }
+      baseURL: process.env.BASE_URL,
+    },
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -86,15 +80,14 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+          success: colors.green.accent3,
+        },
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
 
   loading: false,
 
@@ -108,14 +101,14 @@ export default {
         code: 'en',
         iso: 'en-GB',
         name: 'English',
-        file: 'en.js'
+        file: 'en.js',
       },
       {
         code: 'es',
         iso: 'es-ES',
         name: 'Español',
-        file: 'es.js'
-      }
+        file: 'es.js',
+      },
     ],
     defaultLocale: 'en',
     lazy: true,
@@ -123,9 +116,9 @@ export default {
     strategy: 'no_prefix',
     detectBrowserLanguage: {
       useCookie: false,
-      redirectOn: 'root'
+      redirectOn: 'root',
     },
     differentDomains: false,
-    skipSettingLocaleOnNavigate: true
+    skipSettingLocaleOnNavigate: true,
   },
 }

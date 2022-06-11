@@ -1,7 +1,7 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 
 export function formatTimeStat(ms, multiplier, sign = '+') {
-    const timePerBlock = dayjs(ms).format('ss');
-    const totalTime = dayjs(ms * multiplier).format('mm:ss');
-    return `${sign}${totalTime} (${timePerBlock}s x${multiplier})`; 
+  const timePerBlock = dayjs(ms).format('ss')
+  const totalTime = dayjs(ms * multiplier).format('mm:ss')
+  return `${sign}${totalTime} (${timePerBlock}s x${multiplier})`
 }
