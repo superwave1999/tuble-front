@@ -83,5 +83,9 @@ export default {
     help: 'Cómo jugar',
   },
 
-  footer: '© {year} Imanol Romera. Todos los derechos reservados.',
+  footer: {
+    year: '© {year}',
+    rights: 'Todos los derechos reservados.',
+    source: 'Código en GitHub',
+  },
 }
