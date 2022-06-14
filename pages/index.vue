@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12">
-      <Navigation />
+      <NavigationBar />
     </v-col>
     <v-col cols="12">
       <game-map />
@@ -10,7 +10,7 @@
       <game-actions />
     </v-col>
     <v-col cols="12">
-      <Footer />
+      <FooterText />
     </v-col>
   </v-row>
 </template>

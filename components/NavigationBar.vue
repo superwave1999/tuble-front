@@ -35,7 +35,7 @@
 import { calculateTime } from '~/utils/timelog.js';
 
 export default {
-    name: "Navigation",
+    name: "NavigationBar",
     data() {
         return {
             dialogHelp: false,

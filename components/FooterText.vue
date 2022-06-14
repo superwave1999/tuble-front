@@ -16,7 +16,7 @@
 import { toRoman } from 'roman-numerals'
 
 export default {
-  name: 'Footer',
+  name: 'FooterText',
   data() {
     return {
       year: toRoman(new Date().getFullYear()),
