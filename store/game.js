@@ -31,8 +31,8 @@ export const mutations = {
     const serverTimestamp = fullObject.Timestamp
     let dataGameDate = fullObject.Date
     let dataMap = fullObject.Map
-    if (memory) {
-      // Restore map if exists.
+    if (memory && memory.fileTimestamp === serverTimestamp) {
+      // Restore map if exists and is current map.
       if (memory.gameDate) {
         dataGameDate = memory.gameDate
       }
