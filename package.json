@@ -19,7 +19,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.2.2",
     "array-equal": "^1.0.0",
-    "core-js": "^3.22.8",
+    "core-js": "^3.23.0",
     "dayjs": "^1.11.3",
     "nuxt": "^2.15.7",
     "roman-numerals": "^0.3.2",
